@@ -17,7 +17,7 @@ import os
 import shutil
 import sys
 
-SKILLS = ("ctf-playbook", "ctf-prompt-optimizer")
+SKILLS = ("ctf-playbook", "ctf-prompt-optimizer", "redteam-agent")
 
 
 def _repo_root() -> str:
