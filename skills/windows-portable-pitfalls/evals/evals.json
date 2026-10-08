@@ -1,0 +1,15 @@
+{
+  "skill_name": "windows-portable-pitfalls",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "这个 .cmd 中文注释报错",
+      "expected_output": "判定 CRLF/ASCII 问题：.cmd 必须 CRLF+纯 ASCII，中文注释改英文或删；被 git 转 LF 要转回 CRLF。"
+    },
+    {
+      "id": 2,
+      "prompt": "换盘符后 hook 失效了",
+      "expected_output": "检查是否有硬编码绝对路径；定位一律用 %~dp0 / ${CLAUDE_PROJECT_DIR} / 向上查 start.cmd，改后重启会话。"
+    }
+  ]
+}

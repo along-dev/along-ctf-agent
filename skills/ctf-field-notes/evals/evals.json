@@ -1,0 +1,20 @@
+{
+  "skill_name": "ctf-field-notes",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "这个站打半天没进展",
+      "expected_output": "先判族（f01/f02 等），再查 04-case-index 同族先例；对号 02-stuck-points 卡点症状；连续无进展则按 03-closure-criteria 判封板并写 case index，不闷头重试。"
+    },
+    {
+      "id": 2,
+      "prompt": "上次那个目标怎么卡的",
+      "expected_output": "查 04-case-index 按 target/family 过滤，命中则读证据路径复用结论，区分'手法可参考'与'结论可复用'（同族+同卡点才复用结论）。"
+    },
+    {
+      "id": 3,
+      "prompt": "这题属于哪个族",
+      "expected_output": "按载体走 01-family-taxonomy 决策树，给族号+主攻路线；叠加场景标主族/副族（如 Web后台+链上=f02+f08）。"
+    }
+  ]
+}

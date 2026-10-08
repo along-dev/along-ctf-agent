@@ -1,0 +1,15 @@
+{
+  "skill_name": "ctf-cache-and-cost",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "昨天扫过这个站，今天还要再扫吗",
+      "expected_output": "查缓存+判新鲜(时间窗内读缓存，过期则增量 diff 只补变化项)，不重跑全量子域枚举；报命中率并注明统计窗口。"
+    },
+    {
+      "id": 2,
+      "prompt": "要不要拆子 Agent",
+      "expected_output": "按 03-subagent-split 判据：多独立目标并行/翻大量文件才拆；串行攻击链和单目标单线不拆（上下文连续，拆了丢线索）。"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+# 特性开关（hook / form_normalizer 读取）
+# form_normalizer: true → hook 做 T1 去标签；false → 只注入 REMINDER
+features:
+  form_normalizer: false
+
+# 可选：扩展战果词词典（覆盖/追加 console/form_normalizer.py 内置词典）
+lexicon: {}

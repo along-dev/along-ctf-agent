@@ -1,0 +1,15 @@
+{
+  "skill_name": "tg-bridge",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "打下一个 shell，通知一下老板",
+      "expected_output": "构造关键节点消息(目标+证明级别+证据路径)，用 Bot API sendMessage 推送，可带 inline 按钮让老板决策；凭据放 config 不硬编码；失败静默降级不阻塞。"
+    },
+    {
+      "id": 2,
+      "prompt": "下一步是写操作，需要老板确认",
+      "expected_output": "推待确认项+确认/取消按钮，挂起该分支等 callback 回传；期间不空转，独立分支继续跑。"
+    }
+  ]
+}
