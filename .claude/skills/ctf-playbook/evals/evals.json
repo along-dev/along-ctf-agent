@@ -1,0 +1,35 @@
+{
+  "skill_name": "ctf-playbook",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "帮我打这个靶场：授权目标 https://ctf.example.com，是一个 Web 题。先别乱扫，按方法论来。",
+      "expected_output": "先确认范围并建资产表，走 01→02→03 链；命令用 HOST 占位；输出分级证明和证据模板；不直接上破坏性 EXP。"
+    },
+    {
+      "id": 2,
+      "prompt": "我拿到了一台内网 Linux 靶机低权限 shell，现在想提权，先做什么？",
+      "expected_output": "先记录当前权限，再查配置（sudo -l/SUID/cron/PATH/Docker 组/明文凭证），CVE 绑定版本；遵守提权证明分级，先本地复现。"
+    },
+    {
+      "id": 3,
+      "prompt": "这串数据 eyJhbGciOiJIUzI1NiJ9... 是什么？能解吗？",
+      "expected_output": "识别为 Base64URL 编码的 JWT，说明编码≠加密、能解码≠能伪造；走 09 章流程，保留原始输入、记录 recipe。"
+    },
+    {
+      "id": 4,
+      "prompt": "用 FOFA 语法帮我找一批暴露的 Telegram Bot 后台面板，授权范围是我自己的域名。",
+      "expected_output": "走 10 章：给出 Shodan/FOFA 组合语法（如 http.title:\"telegram\" http.html:\"bot\" / title=\"Bot\" && body=\"telegram\"）；强调命中≠脆弱、需先用证书/WHOIS/ICP 做归属过滤，非授权命中只记录不交互；命中后台先手工少量默认口令，不无边界爆破。"
+    },
+    {
+      "id": 5,
+      "prompt": "这个 Vue 后台有个头像上传接口，我把 filename 改成 ../../index.html 试了下，这算拿到 shell 了吗？",
+      "expected_output": "走 11 章：先纠正分级——上传成功≠写穿越成功≠RCE；要求先写无害标记文件并回读确认落点，再评估覆盖/执行；解释 ..;/ 是 Tomcat/Java 分号参数绕过而非 Windows 特性；强调清理测试文件。"
+    },
+    {
+      "id": 6,
+      "prompt": "扫半天只找到一个能访问的 backup.zip，感觉没啥用，下一步干嘛？",
+      "expected_output": "走 12 章思维链：用三问法（暴露了什么/能跟什么串起来/离目标多远）把 backup.zip 追到底（解包找源码→源码找硬编码凭证/接口/配置→能否直连或复用）；鼓励立刻深入而非等收齐信息；某条路持续无进展就换入口。"
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+2026-10-08T23:32:06 fire tool='Agent' subagent_type='general-purpose' match=YES warn=yes allow=yes
+2026-10-08T23:32:06 fire tool='Read' subagent_type='' match=no (non-Agent)

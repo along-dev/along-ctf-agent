@@ -1,0 +1,29 @@
+{
+  "_comment": "子龙红队 Agent hooks。归化 hook 每次提交注入 [CTF 归化] 上下文；分派警告 hook 在 Agent 用 general-purpose 时提示改用 Explore。包装器用 %~dp0 定位自身，换盘符/目录不受影响。",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Agent",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/run_agenttype_warn.cmd",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/run_normalize.cmd",
+            "timeout": 15,
+            "statusMessage": "归化 CTF 提示词"
+          }
+        ]
+      }
+    ]
+  }
+}
